@@ -38,8 +38,6 @@ public class PanelBotones extends JPanel implements ActionListener{
     
     private InterfazTriangulo triangulo;
     
-    private JButton btnPuntos;
-    
     private JButton btnColorLinea;
     
     private JButton btnColorFondo;
@@ -50,37 +48,6 @@ public class PanelBotones extends JPanel implements ActionListener{
     
     private JLabel etiquetaAltura;
     
-    public PanelBotones() {
-        
-        setLayout(new GridLayout(6, 1));
-        setBackground(Color.WHITE);
-        
-        btnColorLinea = new JButton("Cambiar Lineas");
-        btnColorLinea.setActionCommand(COLOR_LINEA);
-        btnColorLinea.addActionListener(this);
-        add(btnColorLinea);
-        
-        btnColorFondo = new JButton("Cambiar Fondo");
-        btnColorFondo.setActionCommand(COLOR_FONDO);
-        btnColorFondo.addActionListener(this);
-        add(btnColorFondo);
-        
-        btnColorFondo = new JButton("Cambiar Puntos");
-        btnColorFondo.setActionCommand(PUNTOS);
-        btnColorFondo.addActionListener(this);
-        add(btnColorFondo);
-        
-        etiquetaArea = new JLabel("Area: ");
-        add(etiquetaArea);
-        
-        etiquetaPerimetro = new JLabel("Perimetro: ");
-        add(etiquetaPerimetro);
-
-        etiquetaAltura = new JLabel("Altura: ");
-        add(etiquetaAltura);
-        
-    }
-
     PanelBotones(InterfazTriangulo interfaz, boolean b) {
         this.triangulo=interfaz;
         setLayout(new GridLayout(6, 1));
@@ -93,11 +60,6 @@ public class PanelBotones extends JPanel implements ActionListener{
         
         btnColorFondo = new JButton("Cambiar Fondo");
         btnColorFondo.setActionCommand(COLOR_FONDO);
-        btnColorFondo.addActionListener(this);
-        add(btnColorFondo);
-        
-        btnColorFondo = new JButton("Cambiar Puntos");
-        btnColorFondo.setActionCommand(PUNTOS);
         btnColorFondo.addActionListener(this);
         add(btnColorFondo);
         
@@ -123,10 +85,6 @@ public class PanelBotones extends JPanel implements ActionListener{
                 System.out.print("Imprimio boton color fondo");
                 colorArea=new DialogoColorArea(triangulo);
                 break;        
-            case PUNTOS:
-                System.out.print("Imprimio boton puntos");
-                DialogoPuntos p1=new DialogoPuntos(triangulo);
-                break;
         }
         
     }

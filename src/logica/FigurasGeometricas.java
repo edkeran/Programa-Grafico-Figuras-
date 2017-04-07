@@ -12,13 +12,18 @@ package logica;
  */
 public class FigurasGeometricas {
     private Punto puntoA;  //Creacion atributo de la clase Punto
+    
     private Punto puntoB; // creacion atributo de la clase Punto
 
     private double area;
     
-    private boolean validar;
+    boolean validar;
   
     private double perimetro;
+    
+    private double altura;
+    
+    private double radio;
     
     /*
     *Constructor que inicializa las variables
@@ -93,7 +98,22 @@ public class FigurasGeometricas {
     public void setValidar(boolean validar) {
         this.validar = validar;
     }
-    
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double getRadio() {
+        return radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
     
 }
 

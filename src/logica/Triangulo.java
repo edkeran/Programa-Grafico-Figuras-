@@ -12,6 +12,7 @@ package logica;
  */
 public class Triangulo extends FigurasGeometricas{
     private Punto puntoC;
+
     /**
      * metodo constructor que inicializa los atributos
      * @param puntoA
@@ -24,7 +25,7 @@ public class Triangulo extends FigurasGeometricas{
         super.setValidar(isTriangulo());
         super.setArea(darArea());
         super.setPerimetro(darPerimetro());
-        
+        darAltura();
     }
     /**
      * Metodo que reune los demas metodos que realizan los calculos
@@ -112,7 +113,7 @@ public class Triangulo extends FigurasGeometricas{
      * @return  area
      */
     private int darArea() {
-        double s = darPerimetro() / 2;
+        double s = (darPerimetro() / 2);
         double valorLado1 = s - lado1();
         double valorLado2 = s - lado2();
         double valorLado3 = s - lado3();
@@ -120,7 +121,23 @@ public class Triangulo extends FigurasGeometricas{
         setArea(area);
         return (int) (area+ super.getArea());
     }
-    
+    private void darAltura(){
+        double altura1;
+        double altura2;
+        double altura3;
+        altura1=(2*getArea())/lado1();
+        altura2=(2*getArea())/lado2();
+        altura3=(2*getArea())/lado3();
+            if ((altura1>=altura2)&&(altura1>=altura3)){
+                setAltura(altura1);
+            }
+            if ((altura2>=altura1)&&(altura2>=altura3)){
+                setAltura(altura2);
+            }
+            if ((altura3>=altura1)&&(altura3>=altura2)){
+                setAltura(altura3);
+            }
+        }
     /**
      * Retorna el tipo de triangulo
      * @return TipoTriangulo
@@ -153,7 +170,4 @@ public class Triangulo extends FigurasGeometricas{
     public void setPuntoC(Punto puntoC) {
         this.puntoC = puntoC;
     }
-    
-    
-    
 }
