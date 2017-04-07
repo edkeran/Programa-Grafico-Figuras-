@@ -22,8 +22,8 @@ public class PanelTriangulo extends JPanel{
     double radio;
     String seleccion;
     String colorA;
-    int tipo=1;
-    double coordenadaX1=(this.getWidth()/2),coordenadaX2=100,coordenadaX3=100,coordenadaY1=(this.getHeight()/2),coordenadaY2=0,coordenadaY3=100;
+    int tipo=1,lado1,lado2;
+    double coordenadaX1=(this.getWidth()/2),coordenadaX2=100,coordenadaX3=100,coordenadaY1=(this.getHeight()/2),coordenadaY2=0,coordenadaY3=100,coordenadaX4,coordenadaY4;
     public PanelTriangulo () {
         setBackground(Color.GRAY);
         Dimension d = getSize();
@@ -57,19 +57,16 @@ public class PanelTriangulo extends JPanel{
             g2d.fillOval((int) coordenadaX1,(int) coordenadaY1, (int) radio,(int) radio);
         }
         if (tipo==3){
+            int coordX[]={(int)coordenadaX1+40,(int)coordenadaX2+40,(int)coordenadaX3+40,(int)coordenadaX4+40};
+            int coordY[]={(int)coordenadaY1,(int)coordenadaY2,(int)coordenadaY3,(int)coordenadaY4};
             Graphics2D g2d = (Graphics2D) g;
-            Polygon polygon = new Polygon();
-            polygon.addPoint((int)(0+(this.getHeight()/2)), (int)((this.getHeight()/2)-0));
-            polygon.addPoint((int)(0+(this.getHeight()/2)), (int)((this.getHeight()/2)-90));
-            polygon.addPoint((int)(90+(this.getHeight()/2)),(int)((this.getHeight()/2)-0));  
-            polygon.addPoint((int)(90+(this.getHeight()/2)),(int)((this.getHeight()/2)-90));
             g.drawLine(0,this.getHeight()/2, this.getWidth(), this.getHeight()/2);
             g.drawLine(this.getWidth()/2, 0, this.getWidth()/2, this.getHeight()); 
             g2d.setColor(colorArea(colorA));
-            g2d.fillRect(0, 200, 50, 150);
+            g2d.fillPolygon(coordX, coordY, 4);
             g2d.setStroke(new BasicStroke(3.f));
             g2d.setColor(establecer(seleccion));
-            g2d.drawRect(0, 200, 50, 150); 
+            g2d.drawPolygon(coordX, coordY, 4);
         }
     }
     private Color establecer(String seleccion){
@@ -123,6 +120,18 @@ public class PanelTriangulo extends JPanel{
         this.radio=rad;
         coordenadaX1=(P1.getX()+((this.getWidth()/2)-(radio/2)));
         coordenadaY1=(((this.getHeight()/2)-(radio/2))-P1.getY());
+    }
+    void establecerCuadrado(logica.Punto P1,logica.Punto P2,logica.Punto P3,logica.Punto P4,int lado1, int lado2){
+        coordenadaX1=(P1.getX()+(this.getHeight()/2));
+        coordenadaY1=((this.getHeight()/2)-P1.getY());
+        coordenadaX2=(P2.getX()+(this.getHeight()/2));
+        coordenadaY2=((this.getHeight()/2)-P2.getY());
+        coordenadaX3=(P3.getX()+(this.getHeight()/2));
+        coordenadaY3=((this.getHeight()/2)-P3.getY());
+        coordenadaX4=(P4.getX()+(this.getHeight()/2));
+        coordenadaY4=((this.getHeight()/2)-P4.getY());
+        this.lado1=lado1;
+        this.lado2=lado2;
     }
     public String getColorA() {
         return colorA;

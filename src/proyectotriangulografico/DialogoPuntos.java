@@ -140,7 +140,33 @@ public class DialogoPuntos extends JDialog implements ActionListener{
                 FigurasGeometricas t1 = new Cuadrado(p1,p2,p3,p4);
                 if (t1.isValidar()){
                     y.getPanelTriangulo().setTipo(3);
+                    y.getPanelBotones().getEtiquetaArea().setText("EL AREA ES :"+t1.getArea());
+                    y.getPanelBotones().getEtiquetaPerimetro().setText("EL PERIMETRO ES: "+t1.getPerimetro());
+                    y.getPanelBotones().getEtiquetaAltura().setText("LA ALTURA ES:"+t1.getAltura());
+                    if (t1.getLado1()!=t1.getLado2()){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4,(int)t1.getLado1(),(int) t1.getLado2());
+                    }
+                    if ((t1.getLado1()==t1.getLado2())&&(t1.getLado1()==t1.getLado3())&&(t1.getLado1()==t1.getLado4())){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4, (int)t1.getLado1(),(int) t1.getLado1());
+                    }
+                    if (t1.getLado1()!=t1.getLado3()){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4, (int)t1.getLado1(),(int) t1.getLado3());
+                    }
+                    if (t1.getLado1()!=t1.getLado4()){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4, (int)t1.getLado1(),(int) t1.getLado3());
+                    }
+                    if (t1.getLado2()!=t1.getLado3()){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4, (int)t1.getLado2(),(int) t1.getLado3());
+                    }
+                    if (t1.getLado2()!=t1.getLado4()){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4, (int)t1.getLado2(),(int) t1.getLado4());
+                    }
+                    if (t1.getLado3()!=t1.getLado4()){
+                        y.getPanelTriangulo().establecerCuadrado(p1,p2,p3,p4, (int)t1.getLado3(),(int) t1.getLado4());
+                    }
                     y.getPanelTriangulo().repaint();
+                    setVisible(false);
+                    dispose();
                 }
                 else {
                     JOptionPane.showMessageDialog(this, "LOS PUNTOS INGRESADOS NO FORMAN UN CUADRADO","MESAJE", JOptionPane.ERROR_MESSAGE);
