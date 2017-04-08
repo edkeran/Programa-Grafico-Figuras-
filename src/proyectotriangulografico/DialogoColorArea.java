@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyectotriangulografico;
 
 import java.awt.BorderLayout;
@@ -15,8 +11,9 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 /**
- *
- * @author EDGAR
+ * clase encargada de pintar el fondo de la figura geometrica
+ * @author EDGAR Kreicj
+ * @author  Michael Cardenas
  */
 public class DialogoColorArea  extends JDialog implements ActionListener {
     private static final String btnColor="seleccion";
@@ -41,7 +38,10 @@ public class DialogoColorArea  extends JDialog implements ActionListener {
         setVisible(true);
             
     }
-
+/**
+ * metodo que deriva de JDialog y se implementa obligatoriamente y controla las acciones de la seleccion de color para el area
+ * @param ae 
+ */
     @Override
     public void actionPerformed(ActionEvent ae) {
         item=caja.caja1.getSelectedItem().toString();

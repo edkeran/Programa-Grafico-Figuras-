@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyectotriangulografico;
 
 import java.awt.Color;
@@ -18,7 +14,8 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Johans Gonzalez
+ * @author Edgar Kreicy
+ * @author Michael Cardenas
  */
 public class PanelBotones extends JPanel implements ActionListener{
     
@@ -48,6 +45,12 @@ public class PanelBotones extends JPanel implements ActionListener{
     
     private JLabel etiquetaAltura;
     
+    
+    /**
+     * opciones para cambiar las linea y fondo de la figura
+     * @param interfaz
+     * @param b 
+     */
     PanelBotones(InterfazTriangulo interfaz, boolean b) {
         this.triangulo=interfaz;
         setLayout(new GridLayout(6, 1));

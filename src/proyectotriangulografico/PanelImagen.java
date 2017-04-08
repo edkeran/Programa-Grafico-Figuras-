@@ -14,13 +14,16 @@ import javax.swing.border.LineBorder;
 
 /**
  *
- * @author Johans Gonzalez
+ * @author Edgar kreicky
+ * @author Michael Cardenas
  */
 public class PanelImagen extends JPanel{
     
     private JLabel imagen;
    
-    
+    /**
+     * recibe una imagen y la guarda se le da la ubicacion en el frame
+     */
     public PanelImagen() {
         
         setBackground(Color.WHITE);

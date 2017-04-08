@@ -17,8 +17,9 @@ import javax.swing.JFrame;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 /**
- *
+ * clase encargada de pintar las lineas o bordes de las figuras
  * @author Edgar Andres Krejci Bautista
+ * @author  Michael Cardenas
  */
 public class DialogoColorLinea extends JDialog implements ActionListener {
     private static final String btnColor="seleccion";
@@ -29,7 +30,10 @@ public class DialogoColorLinea extends JDialog implements ActionListener {
     public DialogoColorLinea() {
         
     }
-    
+    /**
+     * 
+     * @param frame  el cuadro nuevo que aparecera con las opciones de colores
+     */
     public DialogoColorLinea(InterfazTriangulo frame) {
         h=frame;
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -47,7 +51,10 @@ public class DialogoColorLinea extends JDialog implements ActionListener {
         setVisible(true);
     }
     
-
+/**
+ * controla las accioness de seleciion de color
+ * @param ae 
+ */
     @Override
     public void actionPerformed(ActionEvent ae) {
         item=caja.caja1.getSelectedItem().toString();
@@ -56,11 +63,17 @@ public class DialogoColorLinea extends JDialog implements ActionListener {
         setVisible(false);
         dispose();
     }
-
+/**
+ * 
+ * retorna el item o opcion selecccionada
+ */
     public String getItem() {
         return item;
     }
-
+/**
+ * recibe como parametro el item o la seleccion de color
+ * @param item 
+ */
     public void setItem(String item) {
         this.item = item;
     }

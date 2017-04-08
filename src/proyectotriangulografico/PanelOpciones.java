@@ -16,11 +16,12 @@ import javax.swing.border.TitledBorder;
 
 /**
  *
- * @author Johans Gonzalez
+ * @author Edgar Kreicy
+ * @author  Michael Cardenas
  */
 public class PanelOpciones extends JPanel implements ActionListener{
  
-    private JButton btnOpcion1;
+    private JButton btnOpcion1; // botones de las opciones
     
     private JButton btnOpcion2;
     
@@ -34,7 +35,10 @@ public class PanelOpciones extends JPanel implements ActionListener{
     
     private InterfazTriangulo triangulo;
     
-        
+        /**
+         * botones con las opciones disponibles
+         * @param h 
+         */
     public PanelOpciones(InterfazTriangulo h) {    
         this.triangulo=h;
         setBackground(Color.WHITE);

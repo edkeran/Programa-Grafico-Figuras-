@@ -15,8 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 
 /**
- *
- * @author Johans Gonzalez
+ * clase encaragada de ubicar la figura en el plano cartesiano y darle un estilo
+ * @author Edgar Kreicy
+ * 
  */
 public class PanelTriangulo extends JPanel{
     double radio;
@@ -69,6 +70,12 @@ public class PanelTriangulo extends JPanel{
             g2d.drawPolygon(coordX, coordY, 4);
         }
     }
+    
+    /**
+     * decide cual es el color elegido por el usuario y lo muestra segun la opcion escojida
+     * @param seleccion
+     * @return 
+     */
     private Color establecer(String seleccion){
             if (seleccion=="AZUL")
                 return Color.BLUE;
@@ -86,6 +93,12 @@ public class PanelTriangulo extends JPanel{
                 return Color.PINK;
             else return Color.PINK;
     }
+    
+    /**
+     * define el color de fondo de la figura
+     * @param colorArea
+     * @return 
+     */
     private Color colorArea(String colorArea){
             if (colorArea=="AZUL")
                 return Color.BLUE;

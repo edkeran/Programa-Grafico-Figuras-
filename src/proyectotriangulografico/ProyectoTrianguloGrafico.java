@@ -7,7 +7,8 @@ package proyectotriangulografico;
 
 /**
  *
- * @author Johans Gonzalez
+ * @author Edgar Kreicy
+ * @author Michael Cardenas
  */
 public class ProyectoTrianguloGrafico {
 
@@ -16,6 +17,9 @@ public class ProyectoTrianguloGrafico {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //aqui se crea un obejeto de la clase principal que  contiene a lo demas para que funcione el programa 
+        //por aqui arranca el programa...
         InterfazTriangulo inrterfazTriangulo = new InterfazTriangulo();
      //   inrterfazTriangulo.setInterfaz(inrterfazTriangulo);
     }

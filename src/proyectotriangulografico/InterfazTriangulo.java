@@ -7,8 +7,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
- *
+ * clase de la ventana principal del programa y que llama a todos los paneles del mismo y los inicializa
  * @author Edgar Andres Krejci Bautista
+ * @Michael Cardenas
  */
 public class InterfazTriangulo extends JFrame{
     
@@ -25,7 +26,9 @@ public class InterfazTriangulo extends JFrame{
     private PanelTriangulo panelTriangulo;
     
     private DialogoColorLinea color;
-
+/**
+ * ventana principal
+ */
     public InterfazTriangulo() {
         setTitle("PROGRAMA TRIANGULO -- EDGAR ANDRES KREJCI BAUTISTA");
         setSize(600, 600);
@@ -47,6 +50,11 @@ public class InterfazTriangulo extends JFrame{
         panelTriangulo.setSeleccion(seleccion);
         setVisible(true);
     }
+    
+    /**
+     * recibe el color  lo setea cambia
+     * @param item 
+     */
     void setearColor(String item){
         seleccion=panelBotones.colorArea.caja.item;
         panelTriangulo = new PanelTriangulo (  );

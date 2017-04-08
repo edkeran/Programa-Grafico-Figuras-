@@ -1,10 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package logica;
 
+/**
+ * 
+ * @author Edgar Kreicj
+ * @author Michael Cardenas
+ */
 public class Circulo extends FigurasGeometricas{
     static final double PI=3.141592; //Variable tipo final y estatica compartida para todas las clases y objetos
     /**

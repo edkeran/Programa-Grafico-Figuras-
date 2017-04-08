@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyectotriangulografico;
 
 import java.awt.BorderLayout;
@@ -21,12 +17,12 @@ import logica.FigurasGeometricas;
 import logica.Triangulo;
 
 /**
- *
+ *clase que pide los datos de las figuras los puntos
  * @author EDGAR
  */
 public class DialogoPuntos extends JDialog implements ActionListener{
     private JTextField jTextPane1;
-    private JTextField jTextPane2;
+    private JTextField jTextPane2; // espacio donde se pediran os puntos
     private JTextField jTextPane3;
     private JTextField jTextPane4;
     private JTextField jTextPane5;
@@ -34,14 +30,18 @@ public class DialogoPuntos extends JDialog implements ActionListener{
     private JTextField jTextPane7;
     private JTextField jTextPane8;
     private int cont=0;
-    InterfazTriangulo y;
+    InterfazTriangulo y; // creacion del objeto para mannejar el frame de lo puntos
     String informacion=null;
     JButton boton;
     JLabel texto;
     logica.Punto p1,p2,p3,p4;
     double numero,numero2,numero3,numero4,numero5,numero6,numero7,numero8;
     private int botonEscogido;
-    
+    /**
+     * metodo encargado de mostrar la ventana correspondiente a cada figura para pedir los puntos
+     * @param frame
+     * @param escogido 
+     */
     public DialogoPuntos(InterfazTriangulo frame,int escogido) {
          y=frame;
          this.botonEscogido=escogido;
@@ -55,6 +55,13 @@ public class DialogoPuntos extends JDialog implements ActionListener{
              generarDialogoCuadrado();
          }
     }
+    
+    /**
+     * metodo encargado de realizar los calculos segun el boton escojido y llama al metodo de la clase
+     * donde se realiza la logica del programa y genere mensajes de alerta en caso de que lo digitado
+     * no corresponda a la figura o los campos no queden llenados
+     * @param ae 
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
             if(validarDatos()&&(botonEscogido==1)) {
@@ -173,7 +180,10 @@ public class DialogoPuntos extends JDialog implements ActionListener{
                 }
             }
     }
-    
+    /**
+     * valida para ingresar todos los puntos correctamene
+     * @return 
+     */
     private boolean validarDatos() {
         if (botonEscogido==1){
              if(this.jTextPane1.getText().equals("")||this.jTextPane2.getText().equals("")||this.jTextPane3.getText().equals("")
@@ -199,6 +209,9 @@ public class DialogoPuntos extends JDialog implements ActionListener{
         }
         return true;
     }
+    /**
+     * generar el frame o ventana del boton del tiangulo y pide los puntos
+     */
     private void generarDialogoTriangulo(){
          setLayout(new GridLayout(18,1));
          setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -236,6 +249,10 @@ public class DialogoPuntos extends JDialog implements ActionListener{
          System.out.print(informacion);
          System.out.print(botonEscogido);
     }
+    
+    /**
+     * generer el frame o ventana del circulo y pide los puntos
+     */
     private void generarDialogoCirculo(){
          setLayout(new GridLayout(18,1));
          setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -265,6 +282,10 @@ public class DialogoPuntos extends JDialog implements ActionListener{
          System.out.print(informacion);
          System.out.print(botonEscogido);
     }
+    
+    /**
+     * generar el frame o ventana del cuadrado y pedir los puntos
+     */
     private void generarDialogoCuadrado(){
         setLayout(new GridLayout(18,1));
          setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -310,26 +331,52 @@ public class DialogoPuntos extends JDialog implements ActionListener{
          System.out.print(informacion);
          System.out.print(botonEscogido);
     }
+    /**
+     * obtiene el valor ingresado del primer valor
+     * @return 
+     */
     public double getNumero() {
         return numero;
     }
-
+/**
+ * recibe como parametro el valor y lo setea o modifica
+ * @param numero 
+ */
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
+/**
+ * obtiene el valor ingresado del segundo valor
+ * @return 
+ */
     public double getNumero2() {
         return numero2;
     }
 
+    
+    /**
+ * recibe como parametro el valor y lo setea o modifica
+ * @param numero2 
+ */
     public void setNumero2(int numero2) {
         this.numero2 = numero2;
     }
 
+    
+    /**
+ * obtiene el valor ingresado del tercer valor
+ * @return 
+ */
     public double getNumero3() {
         return numero3;
     }
 
+
+    
+       /**
+ * recibe como parametro el valor y lo setea o modifica
+ * @param numero3 
+ */
     public void setNumero3(int numero3) {
         this.numero3 = numero3;
     }
@@ -357,11 +404,17 @@ public class DialogoPuntos extends JDialog implements ActionListener{
     public void setNumero6(int numero6) {
         this.numero6 = numero6;
     }
-
+/**
+ * obtiene el boton que el usuario digito escojio
+ * @return 
+ */
     public int getBotonEscogido() {
         return botonEscogido;
     }
-
+/**
+ * recibe el escojido y setea su valor
+ * @param botonEscogido 
+ */
     public void setBotonEscogido(int botonEscogido) {
         this.botonEscogido = botonEscogido;
     }
