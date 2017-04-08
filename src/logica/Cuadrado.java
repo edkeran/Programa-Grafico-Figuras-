@@ -19,6 +19,14 @@ public class Cuadrado extends FigurasGeometricas{
         super(puntoA, puntoB); //Aqui se llama a la superclase y se inicializan sus atributos
         this.puntoC = puntoC;
         this.puntoD = puntoD;
+        IsCuadrado();
+        calcularPerimetro();
+        calcularArea();
+        super.setLado1(calcularLado1());
+        super.setLado2(calcularLado2());
+        super.setLado3(calcularLado3());
+        super.setLado4(calcularLado4());
+
     }
     /**
      * metodo que reune los metodos que realizan todos los calculos 
@@ -61,18 +69,18 @@ public class Cuadrado extends FigurasGeometricas{
      * @return true o false
      */
      private void IsCuadrado(){
-            
          if(getPuntoA().getY() == getPuntoB().getY() & getPuntoB().getX() == this.puntoC.getX() 
                  & this.puntoC.getY() == this.puntoD.getY() & getPuntoA().getX() == this.puntoD.getX()){
-             validar= true;
+             super.setValidar(true);
+             System.out.println("ENTRO TRUE 1");
          }
          else if (getPuntoA().getX() == getPuntoB().getX() & getPuntoB().getY() == this.puntoC.getY()
                  & this.puntoD.getX() == this.puntoD.getX() & this.puntoD.getY() == getPuntoA().getY() ){
-             
-                 validar= true;
-             
+                 super.setValidar(true);
+                 System.out.println("ENTRO TRUE 2");
          } else{
-             validar= false;
+             super.setValidar(false);
+             System.out.println("ENTRO FALSE");
          }
       }
      
@@ -91,15 +99,15 @@ public class Cuadrado extends FigurasGeometricas{
          }
      }
      
-     private double calcularPerimetro(){
-         return calcularLado1() + calcularLado2() + calcularLado3() + calcularLado4()+  super.getPerimetro();
+     private void calcularPerimetro(){
+         super.setPerimetro( calcularLado1() + calcularLado2() + calcularLado3() + calcularLado4());
      }
      /**
       * metodo que retorna el area de un cuadrado
       * @return calcularArea
       */
-     private double calcularArea(){
-         return calcularLado1() * calcularLado4() + super.getArea();
+     private void calcularArea(){
+         super.setArea(calcularLado1() * calcularLado4() + super.getArea());
      }
    /**
     * metodo que regresa el valor del puntoC

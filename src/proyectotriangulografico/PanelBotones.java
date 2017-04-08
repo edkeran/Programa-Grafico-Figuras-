@@ -63,13 +63,13 @@ public class PanelBotones extends JPanel implements ActionListener{
         btnColorFondo.addActionListener(this);
         add(btnColorFondo);
         
-        etiquetaArea = new JLabel("Area: ");
+        etiquetaArea = new JLabel("Area: "+((100*100)/2));
         add(etiquetaArea);
         
-        etiquetaPerimetro = new JLabel("Perimetro: ");
+        etiquetaPerimetro = new JLabel("Perimetro: "+((Math.sqrt(Math.pow(100,2)+Math.pow(100,2)))+200));
         add(etiquetaPerimetro);
 
-        etiquetaAltura = new JLabel("Altura: ");
+        etiquetaAltura = new JLabel("Altura: "+100);
         add(etiquetaAltura);
     }
 

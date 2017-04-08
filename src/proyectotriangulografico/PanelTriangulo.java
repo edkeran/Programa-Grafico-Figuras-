@@ -23,7 +23,7 @@ public class PanelTriangulo extends JPanel{
     String seleccion;
     String colorA;
     int tipo=1,lado1,lado2;
-    double coordenadaX1=(this.getWidth()/2),coordenadaX2=100,coordenadaX3=100,coordenadaY1=(this.getHeight()/2),coordenadaY2=0,coordenadaY3=100,coordenadaX4,coordenadaY4;
+    double coordenadaX1=0,coordenadaX2=100,coordenadaX3=100,coordenadaY1=0,coordenadaY2=0,coordenadaY3=100,coordenadaX4,coordenadaY4;
     public PanelTriangulo () {
         setBackground(Color.GRAY);
         Dimension d = getSize();
